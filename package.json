@@ -4,7 +4,8 @@
   "description": "an updated alternative to koa-route",
   "main": "index.js",
   "scripts": {
-    "example": "DEBUG=koa-switch,example node example.js"
+    "example": "DEBUG=koa-switch,example node example.js",
+    "postversion": "npm publish && git push --follow-tags"
   },
   "repository": {
     "type": "git",

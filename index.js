@@ -1,8 +1,9 @@
 const { METHODS } = require('http')
-const { pathToRegexp, match } = require('path-to-regexp')
+const { match } = require('path-to-regexp')
 const log = require('debug')('koa-switch')
 
 METHODS.forEach(method => module.exports[method.toLowerCase()] = create(method))
+module.exports.all = create()
 
 function create(method) {
   return function(path, fn){
