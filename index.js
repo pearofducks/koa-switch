@@ -8,7 +8,7 @@ module.exports.all = create()
 function create(method) {
   return function(path, fn){
     const pathMatcher = match(path, { decode: decodeURIComponent })
-    log('%s %s -> %s', method || 'ALL', path, re)
+    log('⩼ %s %s', method || 'ALL', path)
 
     const createRoute = function(routeFunc){
       return function (ctx, next){
@@ -17,7 +17,7 @@ function create(method) {
         if (matchData) {
           const { params: args } = matchData
           ctx.routePath = path
-          log('%s %s matches %s %j', ctx.method, path, ctx.path, args)
+          log('%s %s matches %s %o', ctx.method, path, ctx.path, args)
           return Promise.resolve(routeFunc(ctx, args, next))
         }
         return next() // path doesn't match
