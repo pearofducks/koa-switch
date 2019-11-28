@@ -1,6 +1,6 @@
 {
   "name": "koa-switch",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "an updated alternative to koa-route",
   "main": "index.js",
   "scripts": {
